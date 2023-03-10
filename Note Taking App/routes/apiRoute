@@ -1,0 +1,17 @@
+const storage = require('../Develop/db/storage');
+const router = require('express').Router();
+console.log(storage)
+console.log(router)
+
+
+router.get('/notes', (req, res) => {
+  storage
+    .getNotes()
+    .then((notes) => {
+      return res.json(notes);
+    })
+});
+
+
+
+module.exports = router;
